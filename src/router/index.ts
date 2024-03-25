@@ -9,14 +9,14 @@ const router = createRouter({
     {
       path: "/",
       name: "login",
-      component: () => import("../views/auth/LoginView.vue"),
+      component: () => import("../views/auth/Login.vue"),
     },
     {
       path: "/dashboard",
       component: AppLayout,
       children: [
         {
-          path: "/dashboard",
+          path: "",
           name: "home",
           component: () => import("../views/dashboard/Index.vue"),
         },

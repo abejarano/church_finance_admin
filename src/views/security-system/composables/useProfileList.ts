@@ -3,8 +3,8 @@ import { fetchListProfile } from "@/views/security-system/services/profileServic
 import { Profile } from "@/views/security-system/types/profile.ts";
 import { useProfileListStore } from "@/stores/useProfileListStore.ts";
 import { useRouter } from "vue-router";
-import { showMessage } from "@/shared/helpers/showMessage.ts";
 import { useToast } from "primevue/usetoast";
+import { showMessage } from "@/shared/helpers/showMessage.ts";
 
 export const useProfileList = () => {
   const toast = useToast();

@@ -8,7 +8,7 @@ export const fetchLogin = async (
     baseURL: import.meta.env.VITE_BASE_ENDPOINT,
   });
 
-  const response = await client.post(`security-system/user/login`, {
+  const response = await client.post(`admin/user/login`, {
     email,
     password,
   });

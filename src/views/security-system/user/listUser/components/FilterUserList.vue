@@ -8,6 +8,7 @@
         <Button
           icon="pi pi-plus"
           label="Agregar usuario"
+          severity="help"
           @click="redirectEdit('')"
         />
       </template>
@@ -44,6 +45,7 @@
                 size="small"
                 @click="fetchUser()"
                 :loading="isSubmitting"
+                severity="help"
               />
             </div>
             <div class="field col">
@@ -66,6 +68,7 @@
 import Button from "primevue/button";
 import { useListUser } from "@/views/security-system/composables/useListUser.ts";
 import Toolbar from "primevue/toolbar";
+import Dropdown from "primevue/dropdown";
 
 const {
   redirectEdit,

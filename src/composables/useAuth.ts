@@ -21,9 +21,10 @@ export const useAuth = () => {
 
     fetchLogin(form.email.toLowerCase(), form.pass)
       .then((data) => {
+        console.log(data);
         setInitialUserAuth({
           email: data.user.email,
-          token: data.dataToken.token,
+          token: data.dataToken,
           profileId: data.user.profileId,
           userId: data.user.userId,
           name: data.user.name,
@@ -38,7 +39,7 @@ export const useAuth = () => {
       })
       .catch((e) => {
         isSubmitting.value = false;
-        showMessage(toast, e);
+        showMessage(toast, e, "error", "Login");
       });
   };
 

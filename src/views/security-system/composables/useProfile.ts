@@ -8,7 +8,7 @@ import {
 } from "@/views/security-system/types/profile.ts";
 import { useProfileListStore } from "@/stores/useProfileListStore.ts";
 import { registerProfileService } from "@/views/security-system/services/profileService.ts";
-import { showMessage } from "@/shared/helpers/showMessage.ts";
+import { processException } from "@/shared/helpers/processException.ts";
 
 const formProfilePermission = ref<FormAddOrEditProfilePermissions>({
   profileId: undefined,
@@ -105,7 +105,7 @@ export const useProfile = () => {
       })
       .catch((e) => {
         isSubmitting.value = false;
-        showMessage(toast, e);
+        processException(toast, e);
       });
 
     return returnValidate;

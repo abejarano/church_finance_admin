@@ -7,20 +7,20 @@ import {
 
 export const fetchListSystemModule = async () => {
   return await new HttpService(import.meta.env.VITE_BASE_ENDPOINT).get<any>(
-    `security-system/modules`,
+    `admin/modules`,
   );
 };
 
 export const createNewModuleService = async (data: SystemModule) => {
   return await new HttpService(import.meta.env.VITE_BASE_ENDPOINT).post<any>(
-    `security-system/modules/create-module`,
+    `admin/modules/create-module`,
     data,
   );
 };
 
 export const editModuleService = async (data: SystemModule) => {
   return await new HttpService(import.meta.env.VITE_BASE_ENDPOINT).put<any>(
-    `security-system/modules/edit-module`,
+    `admin/modules/edit-module`,
     data,
   );
 };
@@ -30,10 +30,7 @@ export const addOptionModuleService = async (
 ): Promise<OptionModule> => {
   const response = await new HttpService(
     import.meta.env.VITE_BASE_ENDPOINT,
-  ).post<any>(
-    `security-system/modules/add-options-module/${data.systemModuleId}`,
-    data,
-  );
+  ).post<any>(`admin/modules/add-options-module/${data.systemModuleId}`, data);
 
   return response.data;
 };

@@ -6,7 +6,7 @@ import {
 
 export const fetchListProfile = () => {
   return new HttpService(import.meta.env.VITE_BASE_ENDPOINT).get<any>(
-    `security-system/profile`,
+    `admin/profile`,
   );
 };
 
@@ -15,7 +15,7 @@ export const registerProfileService = async (
 ): Promise<Profile> => {
   const response = await new HttpService(
     import.meta.env.VITE_BASE_ENDPOINT,
-  ).post<any>(`security-system/profile`, profile);
+  ).post<any>(`admin/profile`, profile);
 
   return response.data;
 };

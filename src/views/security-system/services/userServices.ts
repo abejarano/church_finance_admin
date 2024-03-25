@@ -4,7 +4,7 @@ import { FormAddOrEditUser, User } from "@/views/security-system/types/user.ts";
 
 export const fetchListUser = (filter: FilterListUserRequestType) => {
   return new HttpService(import.meta.env.VITE_BASE_ENDPOINT).get<any>(
-    `security-system/user`,
+    `admin/user`,
     { ...filter },
   );
 };
@@ -14,14 +14,14 @@ export const addUserService = async (
 ): Promise<User> => {
   const response = await new HttpService(
     import.meta.env.VITE_BASE_ENDPOINT,
-  ).post<any>(`security-system/user/create`, user);
+  ).post<any>(`admin/user/create`, user);
 
   return response.data as User;
 };
 
 export const editUserService = async (user: FormAddOrEditUser) => {
   await new HttpService(import.meta.env.VITE_BASE_ENDPOINT).put<any>(
-    `security-system/user/edit-user/${user.userId}`,
+    `admin/user/edit-user/${user.userId}`,
     user,
   );
 };

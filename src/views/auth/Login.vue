@@ -1,12 +1,3 @@
-<script setup lang="ts">
-import InputText from "primevue/inputtext";
-import Password from "primevue/password";
-import Button from "primevue/button";
-import { useAuth } from "@/composables/useAuth.ts";
-
-const { form, makeLogin, isSubmitting } = useAuth();
-</script>
-
 <template>
   <div
     class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden"
@@ -18,7 +9,7 @@ const { form, makeLogin, isSubmitting } = useAuth();
           padding: 0.3rem;
           background: linear-gradient(
             180deg,
-            var(--primary-color) 10%,
+            var(--purple-800) 10%,
             rgba(33, 150, 243, 0) 30%
           );
         "
@@ -28,14 +19,18 @@ const { form, makeLogin, isSubmitting } = useAuth();
           style="border-radius: 53px"
         >
           <div class="text-center mb-5">
-            <img src="/imagotipo.svg" alt="Image" height="50" class="mb-3" />
-            <div class="text-900 text-3xl font-medium mb-3">Bienvenido!</div>
-            <span class="text-600 font-medium">Coloca tus datos</span>
+            <img src="/logo.png" alt="Image" height="50" class="mb-3" />
+            <div class="text-900 text-3xl font-medium mb-3">
+              {{ t("welcome") }}!
+            </div>
+            <span class="text-600 font-medium">{{ t("credentials") }}</span>
           </div>
 
-          <div>
-            <label for="email1" class="block text-900 text-xl font-medium mb-2"
-              >Correo electronico</label
+          <div class="mt-7">
+            <label
+              for="email1"
+              class="block text-900 text-xl font-medium mb-2"
+              >{{ t("email") }}</label
             >
             <InputText
               id="email1"
@@ -49,7 +44,7 @@ const { form, makeLogin, isSubmitting } = useAuth();
             <label
               for="password1"
               class="block text-900 font-medium text-xl mb-2"
-              >Contraseñas</label
+              >{{ t("password") }}</label
             >
             <Password
               id="password1"
@@ -66,31 +61,34 @@ const { form, makeLogin, isSubmitting } = useAuth();
             >
               <a
                 class="font-medium no-underline ml-2 text-right cursor-pointer"
-                style="color: var(--primary-color)"
-                >Olvide la clave</a
+                style="color: var(--purple-800)"
+                >{{ t("forgot") }}</a
               >
             </div>
             <Button
               @click="makeLogin()"
               :loading="isSubmitting"
-              label="Ingresar"
+              severity="help"
+              :label="t('login')"
               class="w-full p-3 text-xl"
             />
           </div>
         </div>
       </div>
+      <Lang />
     </div>
   </div>
 </template>
+<script setup lang="ts">
+import InputText from "primevue/inputtext";
+import Password from "primevue/password";
+import Button from "primevue/button";
+import { useAuth } from "@/composables/useAuth.ts";
+import { useI18n } from "vue-i18n";
+import Lang from "@/components/Lang.vue";
 
-<style scoped>
-.pi-eye {
-  transform: scale(1.6);
-  margin-right: 1rem;
-}
+const { form, makeLogin, isSubmitting } = useAuth();
 
-.pi-eye-slash {
-  transform: scale(1.6);
-  margin-right: 1rem;
-}
-</style>
+const { t } = useI18n({ useScope: "global" });
+</script>
+<style scoped></style>

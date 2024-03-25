@@ -1,0 +1,9 @@
+{
+  "welcome": "Bienvenido",
+  "credentials": "Escribe tus  credenciales",
+  "email": "Correo Electrónico",
+  "password": "Contraseña",
+  "login": "Iniciar Sesión",
+  "forgot": "¿Olvidaste tu contraseña?",
+  "languageSelector": "Cambio de idioma"
+}
