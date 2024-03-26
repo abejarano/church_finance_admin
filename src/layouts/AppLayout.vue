@@ -4,7 +4,7 @@ import AppSidebar from "@/layouts/AppSidebar.vue";
 
 import { computed, onMounted, ref, watch } from "vue";
 import { useLayout } from "@/layouts/composables/layout";
-import { useAuthStore } from "@/stores/useAuthStore.ts";
+import { useAuthStore } from "@/shared/stores/useAuthStore.ts";
 
 const { layoutConfig, layoutState, isSidebarActive } = useLayout();
 

@@ -1,4 +1,4 @@
-export const userProfileRoutes = [
+export const userProfileRoute = [
   {
     path: "",
     name: "profileList",

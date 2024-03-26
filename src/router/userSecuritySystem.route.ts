@@ -1,4 +1,4 @@
-export const userSecuritySystemRoutes = [
+export const userSecuritySystemRoute = [
   {
     path: "",
     name: "userList",

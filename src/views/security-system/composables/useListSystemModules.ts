@@ -1,5 +1,5 @@
 import { computed, ref } from "vue";
-import { useSystemModuleStore } from "@/stores/useSystemModuleStore.ts";
+import { useSystemModuleStore } from "@/views/security-system/store/useSystemModuleStore.ts";
 import {
   OptionModule,
   SystemModule,

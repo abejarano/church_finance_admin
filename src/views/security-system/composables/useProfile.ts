@@ -6,7 +6,7 @@ import {
   FormAddOrEditProfilePermissions,
   Profile,
 } from "@/views/security-system/types/profile.ts";
-import { useProfileListStore } from "@/stores/useProfileListStore.ts";
+import { useProfileListStore } from "@/views/security-system/store/useProfileListStore.ts";
 import { registerProfileService } from "@/views/security-system/services/profileService.ts";
 import { processException } from "@/shared/helpers/processException.ts";
 

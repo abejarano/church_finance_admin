@@ -1,4 +1,4 @@
-import { UserAuth } from "@/types/userAuth.type.ts";
+import { UserAuth } from "@/shared/types/userAuth.type.ts";
 import { CryptoService } from "@/shared/services/Crypto.ts";
 import { defineStore } from "pinia";
 

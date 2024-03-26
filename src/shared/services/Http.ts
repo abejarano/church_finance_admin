@@ -3,7 +3,7 @@ import axios from "axios";
 
 import { useRouter } from "vue-router";
 import reAuthenticate from "@/shared/services/reAuthenticate.ts";
-import { useAuthStore } from "@/stores/useAuthStore.ts";
+import { useAuthStore } from "@/shared/stores/useAuthStore.ts";
 
 export interface payloadInterface {
   [key: string]: string | number | null | undefined;

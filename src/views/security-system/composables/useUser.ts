@@ -1,5 +1,5 @@
 import { ref } from "vue";
-import { useListUserStore } from "@/stores/useListUserStore.ts";
+import { useListUserStore } from "@/views/security-system/store/useListUserStore.ts";
 import { FormAddOrEditUser, User } from "@/views/security-system/types/user.ts";
 import {
   addUserService,

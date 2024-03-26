@@ -5,5 +5,14 @@
   "password": "Contraseña",
   "login": "Iniciar Sesión",
   "forgot": "¿Olvidaste tu contraseña?",
-  "languageSelector": "Cambio de idioma"
+  "languageSelector": "Cambio de idioma",
+  "listDistrict": "Listado de distritos",
+  "districts": "Distritos",
+  "district": "Distrito",
+  "createDate": "Fecha de creación",
+  "administrativeManagement": "Gestión administrativa",
+  "churches": "Iglesias",
+  "actions": "Acciones",
+  "addNewDistrict": "Agregar nuevo distrito",
+  "addDistrict": "Agregar distrito"
 }

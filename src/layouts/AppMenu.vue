@@ -2,9 +2,12 @@
 import { ref } from "vue";
 
 import AppMenuItem from "./AppMenuItem.vue";
-import { useAuth } from "@/composables/useAuth.ts";
+import { useAuth } from "@/shared/composables/useAuth.ts";
+import { useI18n } from "vue-i18n";
 
 const { logout } = useAuth();
+
+const { t } = useI18n({ useScope: "global" });
 
 export interface MenuItemDashboard {
   label: string;
@@ -25,6 +28,56 @@ const menuOptions = ref<MenuItemDashboard[]>([
   {
     label: "HOME",
     items: [{ label: "Dashboard", icon: "pi pi-fw pi-home", to: "/dashboard" }],
+  },
+  {
+    label: t("administrativeManagement"),
+    items: [
+      {
+        label: t("districts"),
+        icon: "pi pi-user-plus",
+        to: "/administrative-management/districts",
+      },
+      {
+        label: "Region",
+        icon: "pi pi-user-plus",
+        to: "/administrative-management/regions",
+      },
+      {
+        label: t("churches"),
+        icon: "pi pi-user-plus",
+        to: "/administrative-management/church",
+      },
+      {
+        label: "Ministros",
+        icon: "pi pi-user-plus",
+        to: "/administrative-management/ministers",
+      },
+    ],
+  },
+  {
+    label: "Gestión local",
+    items: [
+      {
+        label: "Miembros",
+        icon: "pi pi-user-plus",
+        to: "/local-church/members",
+      },
+      {
+        label: "Ingresos",
+        icon: "pi pi-user-plus",
+        to: "/local-church/incomes",
+      },
+      {
+        label: "Compras",
+        icon: "pi pi-user-plus",
+        to: "/local-church/incomes",
+      },
+      {
+        label: "Bienes",
+        icon: "pi pi-user-plus",
+        to: "/local-church/incomes",
+      },
+    ],
   },
   {
     label: "Seguridad del sistema",

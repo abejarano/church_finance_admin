@@ -1,4 +1,4 @@
-import { useAuthStore } from "@/stores/useAuthStore.ts";
+import { useAuthStore } from "@/shared/stores/useAuthStore.ts";
 import { reactive } from "vue";
 import { fetchLogin } from "@/views/auth/services/fetchLogin.ts";
 

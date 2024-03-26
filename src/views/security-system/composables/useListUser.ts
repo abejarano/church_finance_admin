@@ -1,7 +1,7 @@
 import { ref } from "vue";
 import { fetchListUser } from "@/views/security-system/services/userServices.ts";
 import { FilterListUserRequestType } from "@/views/security-system/types/filterListUserRequest.type.ts";
-import { useListUserStore } from "@/stores/useListUserStore.ts";
+import { useListUserStore } from "@/views/security-system/store/useListUserStore.ts";
 import { User } from "@/views/security-system/types/user.ts";
 import { useRouter } from "vue-router";
 import { showMessage } from "@/shared/helpers/showMessage.ts";

@@ -1,7 +1,7 @@
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
-import { fetchLogin } from "../views/auth/services/fetchLogin";
-import { useAuthStore } from "@/stores/useAuthStore.ts";
+import { fetchLogin } from "../../views/auth/services/fetchLogin.ts";
+import { useAuthStore } from "@/shared/stores/useAuthStore.ts";
 import { useToast } from "primevue/usetoast";
 import { showMessage } from "@/shared/helpers/showMessage.ts";
 

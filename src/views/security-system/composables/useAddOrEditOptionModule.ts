@@ -8,7 +8,7 @@ import {
 } from "@/views/security-system/types/systemModule.ts";
 import { showMessage } from "@/shared/helpers/showMessage.ts";
 import { addOptionModuleService } from "@/views/security-system/services/systemModuleService.ts";
-import { useSystemModuleStore } from "@/stores/useSystemModuleStore.ts";
+import { useSystemModuleStore } from "@/views/security-system/store/useSystemModuleStore.ts";
 
 const isOpenFormAddOrEditOptionModule = ref(false);
 const optionModuleId = ref<string>("");

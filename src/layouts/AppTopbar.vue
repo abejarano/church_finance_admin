@@ -2,7 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import { useLayout } from "@/layouts/composables/layout";
 import { useRouter } from "vue-router";
-import { useAuth } from "@/composables/useAuth.ts";
+import { useAuth } from "@/shared/composables/useAuth.ts";
 
 const { layoutConfig, onMenuToggle } = useLayout();
 
@@ -74,7 +74,6 @@ const isOutsideClicked = (event: any) => {
 <template>
   <div class="layout-topbar">
     <router-link to="/" class="layout-topbar-logo">
-      <!-- <img :src="logoUrl" alt="logo" /> -->
       <img src="/logo.png" alt="Image" class="mb-3" />
     </router-link>
 
@@ -93,8 +92,8 @@ const isOutsideClicked = (event: any) => {
     </button>
 
     <div class="layout-topbar-menu" :class="topbarMenuClasses">
+      <p class="pt-3">{{ getName() }}</p>
       <button @click="onTopBarMenuButton()" class="p-link layout-topbar-button">
-        {{ getName() }}
         <i class="pi pi-user"></i>
         <span>Profile</span>
       </button>
@@ -102,4 +101,8 @@ const isOutsideClicked = (event: any) => {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.layout-topbar-menu {
+  width: 140px;
+}
+</style>

@@ -83,7 +83,7 @@
 import InputText from "primevue/inputtext";
 import Password from "primevue/password";
 import Button from "primevue/button";
-import { useAuth } from "@/composables/useAuth.ts";
+import { useAuth } from "@/shared/composables/useAuth.ts";
 import { useI18n } from "vue-i18n";
 import Lang from "@/components/Lang.vue";
 

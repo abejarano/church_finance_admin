@@ -1,5 +1,5 @@
 import { ref } from "vue";
-import { useSystemModuleStore } from "@/stores/useSystemModuleStore.ts";
+import { useSystemModuleStore } from "@/views/security-system/store/useSystemModuleStore.ts";
 import { SystemModule } from "@/views/security-system/types/systemModule.ts";
 import {
   createNewModuleService,

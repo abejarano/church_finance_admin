@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import AppLayout from "@/layouts/AppLayout.vue";
-import { userSecuritySystemRoutes } from "@/router/userSecuritySystemRoutes.ts";
-import { userProfileRoutes } from "@/router/userProfileRoutes.ts";
+import { userSecuritySystemRoute } from "@/router/userSecuritySystem.route.ts";
+import { userProfileRoute } from "@/router/userProfile.route.ts";
+import { administrativeManagementRoute } from "@/router/administrative-management.route.ts";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,11 +23,15 @@ const router = createRouter({
         },
         {
           path: "/security-system/users",
-          children: userSecuritySystemRoutes,
+          children: userSecuritySystemRoute,
         },
         {
           path: "/security-system/profiles",
-          children: userProfileRoutes,
+          children: userProfileRoute,
+        },
+        {
+          path: "/administrative-management",
+          children: administrativeManagementRoute,
         },
       ],
     },

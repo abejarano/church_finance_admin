@@ -1,7 +1,7 @@
 import { ref } from "vue";
 import { fetchListProfile } from "@/views/security-system/services/profileService.ts";
 import { Profile } from "@/views/security-system/types/profile.ts";
-import { useProfileListStore } from "@/stores/useProfileListStore.ts";
+import { useProfileListStore } from "@/views/security-system/store/useProfileListStore.ts";
 import { useRouter } from "vue-router";
 import { useToast } from "primevue/usetoast";
 import { showMessage } from "@/shared/helpers/showMessage.ts";
