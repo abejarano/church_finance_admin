@@ -64,7 +64,14 @@ export const useListDistrict = () => {
     router.push({ name: "editDistrict", params: { districtId } });
   };
 
-  const clearFilter = () => {};
+  const clearFilter = () => {
+    districtListStore.clearList();
+    districtListStore.setFilters({
+      perPage: 10,
+      page: 1,
+      stateId: "",
+    });
+  };
 
   return {
     isSubmitting,

@@ -8,3 +8,5 @@ export const fetchListDistrict = (filter: DistrictListFilter) => {
     Paginate<District>
   >(`structure-organization/district`, { ...filter });
 };
+
+export const fetchListDistrictByState = (filter: DistrictListFilter) => {};

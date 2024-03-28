@@ -17,11 +17,23 @@
     <div class="card">
       <div class="p-fluid formgrid grid">
         <div class="field col-12 md:col-2">
-          <label for="state">Estado</label>
+          <label for="state">{{ t("states") }}</label>
           <Dropdown
             filter
             id="state"
-            v-model="districtListFilter.stateId"
+            v-model="regionListFilter.stateId"
+            :options="listState"
+            optionLabel="name"
+            optionValue="stateId"
+          />
+        </div>
+
+        <div class="field col-12 md:col-2">
+          <label for="state">{{ t("districts") }}</label>
+          <Dropdown
+            filter
+            id="state"
+            v-model="regionListFilter.stateId"
             :options="listState"
             optionLabel="name"
             optionValue="stateId"
@@ -35,7 +47,7 @@
                 <Button
                   label="Filtrar"
                   size="small"
-                  @click="fetchDistrictList(true)"
+                  @click="fetchListRegion(true)"
                   :loading="isSubmitting"
                 />
               </div>
@@ -57,17 +69,17 @@
 </template>
 <script setup lang="ts">
 import Toolbar from "primevue/toolbar";
-import { useListDistrict } from "@/views/administrative-management/composable/useListDistrict.ts";
 import { useI18n } from "vue-i18n";
 import { useState } from "@/shared/composables/useState.ts";
+import { useListRegion } from "@/views/administrative-management/composable/useListRegion.ts";
 
 const { t } = useI18n({ useScope: "global" });
 const {
   clearFilter,
-  fetchDistrictList,
+  fetchListRegion,
   redirectEdit,
-  districtListFilter,
+  regionListFilter,
   isSubmitting,
-} = useListDistrict();
+} = useListRegion();
 const { listState } = useState();
 </script>

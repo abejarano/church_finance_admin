@@ -5,7 +5,7 @@ import {
   addUserService,
   editUserService,
 } from "@/views/security-system/services/userServices.ts";
-import { processException } from "@/shared/helpers/processException.ts";
+import { showMessage } from "@/shared/helpers/showMessage.ts";
 import { useToast } from "primevue/usetoast";
 import { useRouter } from "vue-router";
 
@@ -49,7 +49,7 @@ export const useUser = () => {
       isSubmitting.value = false;
     } catch (e) {
       isSubmitting.value = false;
-      processException(toast, e);
+      showMessage(toast, e);
     }
   };
 

@@ -15,6 +15,8 @@
   "actions": "Acciones",
   "addNewDistrict": "Agregar nuevo distrito",
   "addDistrict": "Agregar distrito",
-  "listDistrict": "Listado de distritos",
-  "listRegions": "Listado de regiones"
+  "listRegion": "Listado de regiones",
+  "listRegions": "Listado de regiones",
+  "addRegion": "Agregar región",
+  "states": "Estados"
 }
