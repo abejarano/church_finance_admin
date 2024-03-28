@@ -34,17 +34,9 @@
 <script setup lang="ts">
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
-import { useListDistrict } from "@/views/administrative-management/composable/useListDistrcit.ts";
+import { useListDistrict } from "@/views/administrative-management/composable/useListDistrict.ts";
 import { useI18n } from "vue-i18n";
-import { onMounted } from "vue";
 
 const { t } = useI18n({ useScope: "global" });
-const { redirectEdit, fetchDistrictList, districtList, columnsHeader } =
-  useListDistrict();
-
-onMounted(() => {
-  if (districtList.value.length === 0) {
-    fetchDistrictList();
-  }
-});
+const { redirectEdit, districtList, columnsHeader } = useListDistrict();
 </script>

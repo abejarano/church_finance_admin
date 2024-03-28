@@ -3,7 +3,7 @@ import { useRouter } from "vue-router";
 import { DistrictListFilter } from "@/views/administrative-management/types/districtListFilter.type.ts";
 import { useListDistrictStore } from "@/views/administrative-management/store/useListDistrictStore.ts";
 import { useI18n } from "vue-i18n";
-import { fetchListDistrict } from "@/views/administrative-management/services/districtService.ts";
+import { fetchListDistrict } from "@/views/administrative-management/services/district.service.ts";
 import { showMessage } from "@/shared/helpers/showMessage.ts";
 import { useToast } from "primevue/usetoast";
 import { District } from "@/views/administrative-management/types/district.type.ts";
@@ -33,7 +33,12 @@ export const useListDistrict = () => {
     { field: "createdAt", header: t("createDate") },
   ];
 
-  const fetchDistrictList = () => {
+  const fetchDistrictList = (cleanList: boolean = false) => {
+    if (cleanList) {
+      districtListStore.clearList();
+      districtListStore.setNextPage(1);
+    }
+
     isSubmitting.value = true;
     fetchListDistrict(districtListFilter.value)
       .then((data) => {
@@ -59,10 +64,14 @@ export const useListDistrict = () => {
     router.push({ name: "editDistrict", params: { districtId } });
   };
 
+  const clearFilter = () => {};
+
   return {
     isSubmitting,
     columnsHeader,
     districtList,
+    districtListFilter,
+    clearFilter,
     redirectEdit,
     fetchDistrictList,
   };

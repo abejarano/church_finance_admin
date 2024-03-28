@@ -34,17 +34,17 @@ const menuOptions = ref<MenuItemDashboard[]>([
     items: [
       {
         label: t("districts"),
-        icon: "pi pi-user-plus",
+        icon: "pi pi-map",
         to: "/administrative-management/districts",
       },
       {
         label: "Region",
-        icon: "pi pi-user-plus",
-        to: "/administrative-management/regions",
+        icon: "pi pi-map",
+        to: "/administrative-management/region",
       },
       {
         label: t("churches"),
-        icon: "pi pi-user-plus",
+        icon: "pi pi-map",
         to: "/administrative-management/church",
       },
       {

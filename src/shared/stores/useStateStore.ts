@@ -6,7 +6,7 @@ export const useStateStore = defineStore("useStateStore", {
     stateList: [] as State[],
   }),
   actions: {
-    setState(stateList: State[]) {
+    setStates(stateList: State[]) {
       this.stateList = [...this.stateList, ...stateList];
     },
     getStateList() {

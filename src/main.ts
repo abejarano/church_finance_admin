@@ -24,6 +24,7 @@ import DialogService from "primevue/dialogservice";
 import i18n from "./i18n";
 import Toast from "primevue/toast";
 import ConfirmDialog from "primevue/confirmdialog";
+import Dropdown from "primevue/dropdown";
 
 const pinia = createPinia();
 
@@ -47,5 +48,6 @@ app.component("Divider", Divider);
 app.component("Column", Column);
 app.component("Toast", Toast);
 app.component("ConfirmDialog", ConfirmDialog);
+app.component("Dropdown", Dropdown);
 
 app.mount("#app");

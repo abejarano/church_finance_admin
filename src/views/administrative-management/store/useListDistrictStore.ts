@@ -13,11 +13,13 @@ export const useListDistrictStore = defineStore("useListDistrictStore", {
     filter: {
       perPage: 10,
       page: 1,
-      name: "",
       stateId: "",
     },
   }),
   actions: {
+    clearList() {
+      this.districtList = [];
+    },
     setDistrict(districtList: District[]) {
       this.districtList = [...this.districtList, ...districtList];
     },
@@ -34,6 +36,9 @@ export const useListDistrictStore = defineStore("useListDistrictStore", {
     },
     setFilters(filter: DistrictListFilter) {
       this.filter = filter;
+    },
+    setNextPage(page: number) {
+      this.filter.page = page;
     },
   },
 });

@@ -14,5 +14,7 @@
   "churches": "Iglesias",
   "actions": "Acciones",
   "addNewDistrict": "Agregar nuevo distrito",
-  "addDistrict": "Agregar distrito"
+  "addDistrict": "Agregar distrito",
+  "listDistrict": "Listado de distritos",
+  "listRegions": "Listado de regiones"
 }
