@@ -7,7 +7,7 @@
       <template #end>
         <Button
           icon="pi pi-plus"
-          :label="t('addDistrict')"
+          :label="t('addRegion')"
           @click="redirectEdit('')"
           severity="help"
         />
@@ -17,26 +17,14 @@
     <div class="card">
       <div class="p-fluid formgrid grid">
         <div class="field col-12 md:col-2">
-          <label for="state">{{ t("states") }}</label>
-          <Dropdown
-            filter
-            id="state"
-            v-model="regionListFilter.stateId"
-            :options="listState"
-            optionLabel="name"
-            optionValue="stateId"
-          />
-        </div>
-
-        <div class="field col-12 md:col-2">
           <label for="state">{{ t("districts") }}</label>
           <Dropdown
             filter
             id="state"
-            v-model="regionListFilter.stateId"
-            :options="listState"
+            v-model="regionListFilter.districtId"
+            :options="listAllDistricts"
             optionLabel="name"
-            optionValue="stateId"
+            optionValue="districtId"
           />
         </div>
 
@@ -54,7 +42,7 @@
               <div class="field col">
                 <Button
                   :loading="isSubmitting"
-                  label="Limpiar Filtros"
+                  :label="t('clearFilter')"
                   severity="secondary"
                   size="small"
                   @click="clearFilter()"
@@ -70,8 +58,8 @@
 <script setup lang="ts">
 import Toolbar from "primevue/toolbar";
 import { useI18n } from "vue-i18n";
-import { useState } from "@/shared/composables/useState.ts";
 import { useListRegion } from "@/views/administrative-management/composable/useListRegion.ts";
+import { useListDistrict } from "@/views/administrative-management/composable/useListDistrict.ts";
 
 const { t } = useI18n({ useScope: "global" });
 const {
@@ -81,5 +69,5 @@ const {
   regionListFilter,
   isSubmitting,
 } = useListRegion();
-const { listState } = useState();
+const { listAllDistricts } = useListDistrict();
 </script>

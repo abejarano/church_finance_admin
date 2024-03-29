@@ -45,13 +45,13 @@ export const useListRegion = () => {
       });
   };
 
-  const redirectEdit = (districtId: string) => {
-    if (districtId === "") {
+  const redirectEdit = (regionId: string) => {
+    if (regionId === "") {
       router.push({ name: "addNewRegion" });
       return;
     }
 
-    router.push({ name: "editRegion", params: { districtId } });
+    router.push({ name: "editRegion", params: { regionId } });
   };
 
   const clearFilter = () => {
@@ -60,7 +60,6 @@ export const useListRegion = () => {
       districtId: "",
       perPage: 10,
       page: 1,
-      stateId: "",
     });
   };
 

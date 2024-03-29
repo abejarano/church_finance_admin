@@ -11,4 +11,16 @@ export const administrativeManagementRoute = [
     component: () =>
       import("@/views/administrative-management/region/Regions.vue"),
   },
+  {
+    path: "region/:regionId",
+    name: "editRegion",
+    component: () =>
+      import("../views/administrative-management/region/AddOrEditRegion.vue"),
+  },
+  {
+    path: "region/new",
+    name: "addNewRegion",
+    component: () =>
+      import("../views/administrative-management/region/AddOrEditRegion.vue"),
+  },
 ];

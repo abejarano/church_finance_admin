@@ -8,3 +8,10 @@ export const fetchAPIListRegion = (filter: RegionListFilter) => {
     Paginate<Region>
   >(`structure-organization/region`, { ...filter });
 };
+
+export const saveAPIRegion = (payload: any) => {
+  return new HttpService(import.meta.env.VITE_BASE_ENDPOINT).post<{
+    message: string;
+    data: Region;
+  }>(`structure-organization/region`, payload);
+};

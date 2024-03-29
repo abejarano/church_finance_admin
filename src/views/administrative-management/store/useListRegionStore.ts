@@ -14,7 +14,6 @@ export const useListRegionStore = defineStore("useListRegionStore", {
       districtId: "",
       perPage: 10,
       page: 1,
-      stateId: "",
     },
   }),
   actions: {

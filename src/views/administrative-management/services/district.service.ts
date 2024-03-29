@@ -9,4 +9,10 @@ export const fetchListDistrict = (filter: DistrictListFilter) => {
   >(`structure-organization/district`, { ...filter });
 };
 
+export const fetchAPIAllDistrict = (): Promise<District[]> => {
+  return new HttpService(import.meta.env.VITE_BASE_ENDPOINT).get<District[]>(
+    `structure-organization/district/all`,
+  );
+};
+
 export const fetchListDistrictByState = (filter: DistrictListFilter) => {};

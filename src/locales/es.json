@@ -18,5 +18,9 @@
   "listRegion": "Listado de regiones",
   "listRegions": "Listado de regiones",
   "addRegion": "Agregar región",
-  "states": "Estados"
+  "editRegion": "Editar región",
+  "states": "Estados",
+  "clearFilter": "Limpiar filtros",
+  "save": "Guardar",
+  "regionName": "Nombre de la región"
 }

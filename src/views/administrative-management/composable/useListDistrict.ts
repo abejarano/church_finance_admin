@@ -3,12 +3,16 @@ import { useRouter } from "vue-router";
 import { DistrictListFilter } from "@/views/administrative-management/types/districtListFilter.type.ts";
 import { useListDistrictStore } from "@/views/administrative-management/store/useListDistrictStore.ts";
 import { useI18n } from "vue-i18n";
-import { fetchListDistrict } from "@/views/administrative-management/services/district.service.ts";
+import {
+  fetchAPIAllDistrict,
+  fetchListDistrict,
+} from "@/views/administrative-management/services/district.service.ts";
 import { showMessage } from "@/shared/helpers/showMessage.ts";
 import { useToast } from "primevue/usetoast";
 import { District } from "@/views/administrative-management/types/district.type.ts";
 
 const isSubmitting = ref(false);
+const listAllDistricts = ref<District[]>([]);
 
 export const useListDistrict = () => {
   const router = useRouter();
@@ -73,11 +77,22 @@ export const useListDistrict = () => {
     });
   };
 
+  const fetchAllDistrict = () => {
+    fetchAPIAllDistrict()
+      .then((data) => {
+        listAllDistricts.value = data;
+      })
+      .catch((e) => {
+        showMessage(toast, e);
+      });
+  };
   return {
     isSubmitting,
     columnsHeader,
     districtList,
     districtListFilter,
+    listAllDistricts,
+    fetchAllDistrict,
     clearFilter,
     redirectEdit,
     fetchDistrictList,
