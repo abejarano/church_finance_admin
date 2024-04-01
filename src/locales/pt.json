@@ -21,8 +21,12 @@
   "addRegion": "Adicionar região",
   "editRegion": "Editar região",
   "states": "Estados",
+  "state": "Estado",
   "clearFilter": "Limpar filtros",
   "save": "Salvar",
   "regionName": "Nome da região",
-  "city": "Cidade"
+  "city": "Cidade",
+  "regions": "Regiões",
+  "listChurches": "Lista de igrejas",
+  "filter": "Filtrar"
 }

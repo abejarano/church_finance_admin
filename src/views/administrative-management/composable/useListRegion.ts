@@ -2,14 +2,20 @@ import { useListRegionStore } from "@/views/administrative-management/stores/use
 import { ref } from "vue";
 import { Region } from "@/views/administrative-management/types/region.type.ts";
 import { RegionListFilter } from "@/views/administrative-management/types/regionListFilter.type.ts";
-import { fetchAPIListRegion } from "@/views/administrative-management/services/region.service.ts";
+import {
+  fetchAPIAllRegionByDistrictId,
+  fetchAPIListRegion,
+} from "@/views/administrative-management/services/region.service.ts";
 import { showMessage } from "@/shared/helpers/showMessage.ts";
 import { useToast } from "primevue/usetoast";
 import { useRouter } from "vue-router";
 
+const listAllRegions = ref<Region[]>([]);
+
 export const useListRegion = () => {
   const toast = useToast();
   const router = useRouter();
+
   const listRegionStore = useListRegionStore();
   const regionList = ref<Region[]>(listRegionStore.getRegionList());
   const regionListFilter = ref<RegionListFilter>(listRegionStore.getFilters());
@@ -45,6 +51,19 @@ export const useListRegion = () => {
       });
   };
 
+  const fetchListRegionByDistrictId = async (districtId: string) => {
+    isSubmitting.value = true;
+    fetchAPIAllRegionByDistrictId(districtId)
+      .then((response) => {
+        listAllRegions.value = response;
+        isSubmitting.value = false;
+      })
+      .catch((error) => {
+        isSubmitting.value = false;
+        showMessage(toast, error);
+      });
+  };
+
   const redirectEdit = (regionId: string) => {
     if (regionId === "") {
       router.push({ name: "addNewRegion" });
@@ -68,6 +87,8 @@ export const useListRegion = () => {
     regionList,
     regionListFilter,
     columnsHeader,
+    listAllRegions,
+    fetchListRegionByDistrictId,
     fetchListRegion,
     redirectEdit,
     clearFilter,

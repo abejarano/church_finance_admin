@@ -15,3 +15,8 @@ export const saveAPIRegion = (payload: any) => {
     data: Region;
   }>(`structure-organization/region`, payload);
 };
+export const fetchAPIAllRegionByDistrictId = (districtId: string) => {
+  return new HttpService(import.meta.env.VITE_BASE_ENDPOINT).get<Region[]>(
+    `structure-organization/region/district/${districtId}`,
+  );
+};

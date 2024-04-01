@@ -23,4 +23,10 @@ export const administrativeManagementRoute = [
     component: () =>
       import("../views/administrative-management/region/AddOrEditRegion.vue"),
   },
+  {
+    path: "church",
+    name: "churchList",
+    component: () =>
+      import("../views/administrative-management/church/Church.vue"),
+  },
 ];
