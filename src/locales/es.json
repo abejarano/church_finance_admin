@@ -12,6 +12,7 @@
   "createDate": "Fecha de creación",
   "administrativeManagement": "Gestión administrativa",
   "churches": "Iglesias",
+  "church": "Iglesia",
   "actions": "Acciones",
   "addNewDistrict": "Agregar nuevo distrito",
   "addDistrict": "Agregar distrito",
@@ -22,5 +23,6 @@
   "states": "Estados",
   "clearFilter": "Limpiar filtros",
   "save": "Guardar",
-  "regionName": "Nombre de la región"
+  "regionName": "Nombre de la región",
+  "city": "Ciudad"
 }

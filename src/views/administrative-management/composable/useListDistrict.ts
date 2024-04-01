@@ -1,7 +1,7 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { DistrictListFilter } from "@/views/administrative-management/types/districtListFilter.type.ts";
-import { useListDistrictStore } from "@/views/administrative-management/store/useListDistrictStore.ts";
+import { useListDistrictStore } from "@/views/administrative-management/stores/useListDistrictStore.ts";
 import { useI18n } from "vue-i18n";
 import {
   fetchAPIAllDistrict,

@@ -1,4 +1,4 @@
-import { useListRegionStore } from "@/views/administrative-management/store/useListRegionStore.ts";
+import { useListRegionStore } from "@/views/administrative-management/stores/useListRegionStore.ts";
 import { ref } from "vue";
 import { Region } from "@/views/administrative-management/types/region.type.ts";
 import { RegionListFilter } from "@/views/administrative-management/types/regionListFilter.type.ts";

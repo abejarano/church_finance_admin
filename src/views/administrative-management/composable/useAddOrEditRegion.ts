@@ -1,6 +1,6 @@
 import { ref } from "vue";
 import { useI18n } from "vue-i18n";
-import { useListRegionStore } from "@/views/administrative-management/store/useListRegionStore.ts";
+import { useListRegionStore } from "@/views/administrative-management/stores/useListRegionStore.ts";
 import { saveAPIRegion } from "@/views/administrative-management/services/region.service.ts";
 import { showMessage } from "@/shared/helpers/showMessage.ts";
 import { useToast } from "primevue/usetoast";
