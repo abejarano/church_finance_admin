@@ -4,11 +4,13 @@ import { Region } from "@/views/administrative-management/types/region.type.ts";
 import { RegionListFilter } from "@/views/administrative-management/types/regionListFilter.type.ts";
 import {
   fetchAPIAllRegionByDistrictId,
+  fetchAPIAllState,
   fetchAPIListRegion,
 } from "@/views/administrative-management/services/region.service.ts";
 import { showMessage } from "@/shared/helpers/showMessage.ts";
 import { useToast } from "primevue/usetoast";
 import { useRouter } from "vue-router";
+import { State } from "@/shared/types/state.type.ts";
 
 const listAllRegions = ref<Region[]>([]);
 
@@ -20,6 +22,7 @@ export const useListRegion = () => {
   const regionList = ref<Region[]>(listRegionStore.getRegionList());
   const regionListFilter = ref<RegionListFilter>(listRegionStore.getFilters());
   const isSubmitting = ref(false);
+  const listState = ref<State[]>(fetchAPIAllState());
 
   listRegionStore.$subscribe((mutation, state) => {
     regionList.value = state.listRegion;
@@ -88,6 +91,7 @@ export const useListRegion = () => {
     regionListFilter,
     columnsHeader,
     listAllRegions,
+    listState,
     fetchListRegionByDistrictId,
     fetchListRegion,
     redirectEdit,

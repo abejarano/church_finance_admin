@@ -6,11 +6,23 @@ export type Church = {
   email: string;
   name: string;
   number: string;
-  openingDate: Date;
+  openingDate: string;
   postalCode: string;
   region: {
     regionId: string;
     name: string;
   };
   street: string;
+};
+
+export type formChurch = {
+  name: string;
+  city: string;
+  address: string;
+  street: string;
+  number: string;
+  postalCode: string;
+  email: string;
+  openingDate: string;
+  regionId: string;
 };

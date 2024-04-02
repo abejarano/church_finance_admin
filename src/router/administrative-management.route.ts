@@ -29,4 +29,16 @@ export const administrativeManagementRoute = [
     component: () =>
       import("../views/administrative-management/church/Church.vue"),
   },
+  {
+    path: "church/new",
+    name: "addNewChurch",
+    component: () =>
+      import("../views/administrative-management/church/AddOrEditChurch.vue"),
+  },
+  {
+    path: "church/:churchId",
+    name: "editChurch",
+    component: () =>
+      import("../views/administrative-management/church/AddOrEditChurch.vue"),
+  },
 ];

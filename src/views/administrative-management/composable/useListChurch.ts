@@ -29,7 +29,6 @@ export const useListChurch = () => {
     { field: "code", header: "" },
     { field: "name", header: t("church") },
     { field: "city", header: t("city") },
-    { field: "state", header: t("state") },
     { field: "createdAt", header: t("createDate") },
   ];
 
@@ -60,6 +59,7 @@ export const useListChurch = () => {
       perPage: 10,
       page: 1,
       regionId: "",
+      status: "",
     });
     churchListStore.setNextPage(1);
   };

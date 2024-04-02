@@ -28,5 +28,15 @@
   "city": "Cidade",
   "regions": "Regiões",
   "listChurches": "Lista de igrejas",
-  "filter": "Filtrar"
+  "filter": "Filtrar",
+  "addChurch": "Adicionar igreja",
+  "editChurch": "Editar igreja",
+  "status": "Status",
+  "active": "Ativo",
+  "inactive": "Inativo",
+  "noMinister": "Sem ministro",
+  "address": "Endereço",
+  "postalCode": "CEP",
+  "complement": "Complemento",
+  "number": "Número"
 }

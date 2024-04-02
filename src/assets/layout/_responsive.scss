@@ -55,15 +55,12 @@
   }
 }
 
-@media (max-width: 991px) {
-  .blocked-scroll {
-    overflow: hidden;
-  }
+@media (max-width: 430px) {
+
 
   .layout-wrapper {
     .layout-main-container {
-      margin-left: 0;
-      padding-left: 2rem;
+      padding: 7rem 0.5rem 2rem 0.5rem;
     }
 
     .layout-sidebar {

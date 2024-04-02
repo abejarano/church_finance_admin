@@ -6,7 +6,7 @@
     <template #end>
       <Button
         icon="pi pi-plus"
-        :label="t('addRegion')"
+        :label="t('addChurch')"
         @click="redirectEdit('')"
         severity="help"
       />
@@ -36,6 +36,21 @@
           :options="listAllRegions"
           optionLabel="name"
           optionValue="regionId"
+        />
+      </div>
+
+      <div class="field col-12 md:col-2">
+        <label for="state">{{ t("status") }}</label>
+        <Dropdown
+          v-model="churchListFilter.status"
+          :options="[
+            { label: t('active'), value: 'ACTIVE' },
+            { label: t('inactive'), value: 'INACTIVE' },
+            { label: t('noMinister'), value: 'NO_MINISTER' },
+          ]"
+          optionLabel="label"
+          optionValue="value"
+          placeholder="Selecciona una naturaleza"
         />
       </div>
 
