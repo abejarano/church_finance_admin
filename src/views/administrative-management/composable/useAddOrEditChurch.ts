@@ -29,6 +29,7 @@ export const useAddOrEditChurch = () => {
 
   const saveChurch = async () => {
     isSubmitting.value = true;
+
     saveAPIChurch(formChurch.value)
       .then((response) => {
         isSubmitting.value = false;
@@ -44,6 +45,7 @@ export const useAddOrEditChurch = () => {
 
   const editChurch = (churchId: string): boolean => {
     const church = findChurchById(churchId);
+    console.log(church);
     if (!church) {
       return false;
     }

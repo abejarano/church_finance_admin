@@ -3,6 +3,7 @@ import { useListRegion } from "@/views/administrative-management/composable/useL
 
 export const useFilterChurch = () => {
   const districtSelected = ref<string>("");
+  const stateIdDistrict = ref<string>("");
   const { fetchListRegionByDistrictId } = useListRegion();
 
   const disableRegionSelector = computed(() => {

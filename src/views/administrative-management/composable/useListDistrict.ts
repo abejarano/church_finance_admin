@@ -86,12 +86,24 @@ export const useListDistrict = () => {
         showMessage(toast, e);
       });
   };
+
+  const findStateToDistrict = (districtId: string): string => {
+    const district = listAllDistricts.value.find(
+      (district) => district.districtId === districtId,
+    );
+    if (!district) {
+      return "";
+    }
+    return district.stateId;
+  };
+
   return {
     isSubmitting,
     columnsHeader,
     districtList,
     districtListFilter,
     listAllDistricts,
+    findStateToDistrict,
     fetchAllDistrict,
     clearFilter,
     redirectEdit,

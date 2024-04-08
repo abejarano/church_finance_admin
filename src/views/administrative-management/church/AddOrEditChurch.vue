@@ -39,6 +39,7 @@
               :options="listAllDistricts"
               optionLabel="name"
               optionValue="districtId"
+              @change="fetchListRegionByDistrictId(districtSelected)"
             />
           </div>
 
@@ -61,21 +62,10 @@
 
         <div class="formgrid grid">
           <div class="field col-6 md:col-6 lg:col-3">
-            <label for="state">{{ t("state") }}</label>
-            <Dropdown
-              filter
-              id="state"
-              v-model="selectedState"
-              :options="listState"
-              optionLabel="name"
-              optionValue="stateId"
-            />
-          </div>
-          <div class="field col-6 md:col-6 lg:col-3">
             <label for="city">{{ t("city") }}</label>
             <InputText id="city" type="text" v-model="formChurch.name" />
           </div>
-          <div class="field col-12 md:col-6 lg:col-6">
+          <div class="field col-12 md:col-9 lg:col-9">
             <label for="complement">{{ t("complement") }}</label>
             <InputText id="complement" type="text" v-model="formChurch.name" />
           </div>
@@ -105,11 +95,23 @@ import Divider from "primevue/divider";
 import { useListRegion } from "@/views/administrative-management/composable/useListRegion.ts";
 import { useListDistrict } from "@/views/administrative-management/composable/useListDistrict.ts";
 import { useFilterChurch } from "@/views/administrative-management/composable/useFilterChurch.ts";
+import { onMounted } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
 const { t } = useI18n({ useScope: "global" });
-const { titleForm, isSubmitting, formChurch, selectedState, saveChurch } =
+const route = useRoute();
+const router = useRouter();
+const { titleForm, isSubmitting, formChurch, editChurch, saveChurch } =
   useAddOrEditChurch();
-const { listState, listAllRegions } = useListRegion();
+const { listAllRegions, fetchListRegionByDistrictId } = useListRegion();
 const { listAllDistricts } = useListDistrict();
 const { districtSelected, disableRegionSelector } = useFilterChurch();
+
+onMounted(() => {
+  if (route.params.churchId) {
+    if (!editChurch(route.params.churchId.toString())) {
+      router.push({ name: "churchList" });
+    }
+  }
+});
 </script>
