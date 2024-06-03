@@ -41,4 +41,10 @@ export const administrativeManagementRoute = [
     component: () =>
       import("../views/administrative-management/church/AddOrEditChurch.vue"),
   },
+  {
+    path: "ministers",
+    name: "ministerList",
+    component: () =>
+      import("@/views/administrative-management/minister/Ministers.vue"),
+  },
 ];

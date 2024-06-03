@@ -38,5 +38,12 @@
   "address": "Endereço",
   "postalCode": "CEP",
   "complement": "Complemento",
-  "number": "Número"
+  "number": "Número",
+  "REVERD": "Reverendo",
+  "DEACON": "Diácono",
+  "WORKERS": "Obreros",
+  "listMinisters": "Lista de ministros",
+  "addNewMinister": "Adicionar novo ministro",
+  "phone": "Telefone",
+  "name": "Nome"
 }

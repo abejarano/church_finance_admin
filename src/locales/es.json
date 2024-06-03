@@ -38,5 +38,12 @@
   "address": "Dirección",
   "postalCode": "Código Postal",
   "complement": "Complemento",
-  "number": "Número"
+  "number": "Número",
+  "REVERED": "Reverendo",
+  "DEACON": "Diácono",
+  "WORKERS": "Obrero",
+  "listMinisters": "Listado de ministros",
+  "addNewMinister": "Agregar nuevo ministro",
+  "phone": "Teléfono",
+  "name": "Nombre",
 }
